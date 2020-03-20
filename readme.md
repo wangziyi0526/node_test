@@ -9,3 +9,16 @@
 1. 大多数Node.js核心API都是采用管用的异步事件驱动架构(fs/http);
 2. 所有能触发事件的对象都是EventEmitter 类的实例;
 3. 事件流程: 引入模块 ---> 创建EventsEmitter对象 --->注册事件---> 触发事件
+
+#### fs.readFile && fs.writeFile (文件系统)
+1. 读取文件(fs.readFile);  app.js
+2. 写入文件(fs.writeFile); app.js
+3. 创建文件夹(fs.mkdir);    index.js
+4. 删除文件夹(fs.rmdir);    index.js
+5. 删除文件(fs.unlink);     index.js
+6. 流程: 引入fs模块 ---> 调用方法 ---> 异常捕获;
+
+
+
+   
+  
