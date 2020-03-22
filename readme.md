@@ -18,6 +18,16 @@
 5. 删除文件(fs.unlink);     index.js
 6. 流程: 引入fs模块 ---> 调用方法 ---> 异常捕获;
 
+#### 服务器
+
+服务器和客户端的关系
+
+client ---request---> server  客户端向浏览器发起请求
+server ---response---> client 服务器返回给客户端响应数据
+
+
+
+
 
 
    
