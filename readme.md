@@ -31,6 +31,13 @@ server ---response---> client 服务器返回给客户端响应数据
 读写流，并且通过搭建的本地服务器返回给客户端
 包含(.txt/.html/.json)格式等
 
+#### node-route 路由模块
+
+通过访问的路径不同返回不同的数据
+详情见/node_route
+
+
+
 
 
 
