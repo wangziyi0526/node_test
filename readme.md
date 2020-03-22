@@ -26,6 +26,13 @@ client ---request---> server  客户端向浏览器发起请求
 server ---response---> client 服务器返回给客户端响应数据
 
 
+#### stream 流
+
+读写流，并且通过搭建的本地服务器返回给客户端
+包含(.txt/.html/.json)格式等
+
+
+
 
 
 
