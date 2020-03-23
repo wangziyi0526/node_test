@@ -11,6 +11,9 @@ var server = http.createServer(function(req,res){
       console.log('home')
       res.writeHead(200,{"Content-type":"text/html"});
       fs.createReadStream(__dirname+"/home.html").pipe(res);
+    }else if(req.url === '/aboutMe'){
+      res.writeHead(200,{"Content-type":"text/html"});
+      fs.createReadStream(__dirname+"/aboutMe.html").pipe(res);
     }
   }
 })
