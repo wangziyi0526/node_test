@@ -36,13 +36,9 @@ server ---response---> client 服务器返回给客户端响应数据
 通过访问的路径不同返回不同的数据
 详情见/node_route
 
+#### express 框架
 
+1.基于Node.js平台，快速、开放、极简的web框架。
 
-
-
-
-
-
-
-   
-  
+2.nodemon 
+> 在开发环境下，往往需要一个工具来自动重启项目工程，我们可以借助nodemon开代替node进行启动
