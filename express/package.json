@@ -9,6 +9,7 @@
   "author": "wangziyi0526",
   "license": "ISC",
   "devDependencies": {
+    "ejs": "^3.0.1",
     "express": "^4.17.1",
     "nodemon": "^2.0.2"
   }
