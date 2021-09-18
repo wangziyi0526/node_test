@@ -1,11 +1,11 @@
-# Module
+# Node 中Module的require
 
--CommonJs
+- CommonJs
 
 > CommonJs 将每个文件都看做一个模块, 模块内部定义的变量都是私有的, 无法被其他模块使用,除非使用预定义的方法将内部的变量暴露出来(通过 export 和 require 关键字来实现), CommonJs 最为出名的实现就是 Node.js.
 > CommonJs 一个显著的特点就是模块的加载是同步的,就目前来说, 受限于宽带速度, 并不适用于浏览器中的 JavaScript.
 
--AMD
+- AMD
 
 > AMD 是 Asynchronous Module Definition 的缩写, 意思就是[ 异步模块定义 ]. 它采用异步方式加载模块, 模块的加载不影响它后面语句的运行。依赖这个模块的代码定义在一个回调函数中, 等到加载完成后, 这个回调函数才会运行。目前在前端流行的 RequireJs 就是 AMD 规范的一种实现
 
