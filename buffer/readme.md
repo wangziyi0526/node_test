@@ -71,3 +71,21 @@ console.log(buffer.toString("utf-8",0,5));
 ```
 
 - 如果 toString 在调用时不包含任何参数, 那么就会默认采用 UTF-8 编码, 并转换整个 Buffer 对象
+
+## Buffer 的拼接
+
+- Buffer 一个常见的使用场景是用来处理 http 的 post 请求, 随便在网络上搜索, 都能看到类似如下的代码
+
+```
+var body = '';
+req.setEncoding("utf-8");
+req.on('data', function (chunk){
+  body += chunk;
+})
+req.on('end', function () {
+
+})
+```
+
+- 上面的代码使用 += 来拼接上传的数据流, 这个过程包含了一个隐式的编码转换。
+- body +=chunk 相当于 body += chunk.toString(), 当上传字符串全都是英文的时候固然没关系, 但如果字符串中包含中文或者其他语言, 由于 toString 方法默认使用 utf-8 编码, 这时就有可能出现乱码,
