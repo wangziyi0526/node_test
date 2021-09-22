@@ -16,3 +16,58 @@ fs.readFile("test.txt", function (err,results) {
 ```
 
 - 上面的代码中, 最后打印出的是十六进制的数据, 由于纯二进制格式太长而且难以阅读, Buffer 通常表现为十六进制的字符串。
+
+## Buffer 的构建与转换
+
+- 可以使用 Buffer 类数值解初始化一个 Buffer 对象, 参数可以是由 二进制数据组成的数组。
+
+```
+var buffer = new Buffer([0*48,......]);
+// Hello world
+```
+
+- 如果想由字符串来得到一个 Buffer, 同样可以调用构造函数来实现, 例如:
+
+```
+var buffer = new Buffer ("Hello world");
+console.log(buffer); // <Buffer 48 65 ...>
+```
+
+- 注意: 在最新的 Node API 中, Buffer()方法被标记为 Deprecated, 表示已经不推荐使用, 因为这个方法在某些情况下可能不安全, 并且会在将来的版本中将其移除。
+- 目前推荐的是使用 Buffer.from 方法来初始化一个 Buffer 对象,上面的代码可以改写为如下形式
+
+```
+var buffer = Buffer.from([0*48,......]);
+// "Hello World"
+
+var buffer = Buffer.from("Hello World);
+console.log(buffer);// <Buffer 48 65 6c .....>
+```
+
+- 如果想把一个 Buffer 对象转成字符串格式, 需要使用 toString 方法, 调用格式为:
+
+```
+buffer.toString([encoding], [start], [end]);
+// encoding 目标编码格式
+// start 开始位置
+// end 结束位置
+```
+
+- Buffer 支持的编码类型种类有限, 只有以下 6 种:
+
+1. ASCII
+2. Base64
+3. Binary
+4. Hex
+5. Utf-8
+6. Utf-16LE / UCS-2
+
+- 不过也已经覆盖了最常用的编码类型。Buffer 还提供了 isEncoding 方法来判断是否支持转换为目标编码格式.
+- 例如, 如果我们想把上面表示 [Hello World] 的 Buffer 对象转换为字符串, 那么可以调用:
+
+```
+// 只转换前5个字符, 输出"Hello"
+console.log(buffer.toString("utf-8",0,5));
+```
+
+- 如果 toString 在调用时不包含任何参数, 那么就会默认采用 UTF-8 编码, 并转换整个 Buffer 对象
